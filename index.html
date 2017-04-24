@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+	<title>Dog Catcher</title>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,700" rel="stylesheet">
+	<link href="assets/css/reset.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+	<script src="assets/javascript/game.js" type="text/javascript"></script>
+</head>
+<body>
+	<header>
+		<h1>Dog Catcher</h1>
+	</header>
+	<div class="container">
+	    <div id="dog-catcher">
+	    	<img src="assets/images/dog-catcher.jpeg" width="400px" margin-bottom="20px">
+	    </div>
+	    <div id="word">
+			<p>Click "play" to start</p>
+	    </div>
+	    <div id="blanks">
+	    </div>
+	    <p>Guess the dog breed to avoid being caught!</p>
+	    <button onclick="gameStart()" id="">Play</button>
+	    <div id="alphabet">
+    		 <script>
+		    	printLetters();
+		    </script>
+	    </div>
+		<div id="guess">
+			<form>
+				<input type="text" value="Do you know the word?">
+				</input>
+				<input type="submit" value="Submit"></input>
+			</form>
+		</div>
+		<div id="">
+			<button onclick="storeLetters()" id="choice" >a</button>
+		</div>
+
+	</div>
+</body>
+</html>

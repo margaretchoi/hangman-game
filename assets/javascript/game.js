@@ -10,27 +10,6 @@ var userScore = 0;
 var userLives = 7;
 var missedWords = [];
 
-// Displays each letter as a button
-// var printLetters = function() {
-// 	for (i = 0; i < letters.length; i++) {
-// 		var currentLetter = document.createElement("button");
-// 		document.getElementById("alphabet").appendChild(currentLetter);
-// 		currentLetter.id = letters[i];
-// 		currentLetter.innerHTML = letters[i];
-// 		currentLetter.addEventListener("click", storeLetters());
-// 	} // end for loop
-// }; // end function
-
-// var storeLetters = function() {
-// 	var userGuess = document.getElementById("a").innerHTML;
-// 	console.log(userGuess);
-// 	guesses.push(userGuess);
-// }
-
-// Selects a random word and replaces letters as blanks
-
-
-
 var gameStart = function() {
 
 	// Assigns gameWord to a random word
@@ -73,7 +52,6 @@ var gameStart = function() {
 		// Stores all user guesses
 		allGuesses.push(userGuess);
 		
-		var blankWord = blankLetters.join("");
 
 		if (gameLetters.includes(userGuess) === true) {
 			for (i = 0; i < gameLetters.length; i++) {
@@ -82,9 +60,6 @@ var gameStart = function() {
 					blankLetters.splice(i, 1, gameLetters[i]);
 					document.getElementById("word").innerHTML = blankLetters.join(" ");
 				}
-				// else if (userGuess !== gameLetters[i]) {
-				// 	wrongGuesses.push(userGuess);
-				// }
 			}
 		}
 
@@ -92,7 +67,9 @@ var gameStart = function() {
 			wrongGuesses.push(userGuess);
 			storeGuesses.push(wrongGuesses[1]);
 			console.log(storeGuesses);
-		};
+		}
+
+		var blankWord = blankLetters.join("");
 
 
 		console.log(blankLetters);
@@ -105,14 +82,12 @@ var gameStart = function() {
 		// wrongGuesses.length = 0;
 
 
-		var checkWord = function() {
-			if (blankWord === gameWord) {
-				alert("You win! Press play to guess again.");
-				userScore++;
-			}
+		if (blankWord === gameWord) {
+			alert("You win! Press play to guess again.");
+			userScore++;
 		}
 
-		checkWord();
+		// checkWord();
 
 		document.getElementById("guesses").innerHTML = wrongGuesses + " ";
 
